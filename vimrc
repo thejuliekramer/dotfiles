@@ -36,6 +36,8 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'godlygeek/tabular'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'elzr/vim-json'
 
 "All Plugins must be added before the following line
 call vundle#end()         " required
@@ -58,6 +60,7 @@ set timeoutlen=1000                                      " used for mapping dela
 set ttimeoutlen=0                                        " used for keycode delays
 set incsearch                                            " searches characters as they are entered
 set hlsearch                                             " highlight matches
+let g:vim_json_syntax_conceal = 0
 let g:solarized_termcolors = 256
                                                          " set background=dark
 colorscheme molokai
@@ -132,6 +135,13 @@ nnoremap <leader>fr :VtrFocusRunner<cr>
 " ============================ "
 " Misc. configuration          "
 " ============================ "
+
+"Requires 'jq' (brew install jq)
+function! s:PrettyJSON()
+  %!jq .
+  set filetype=json
+endfunction
+command! PrettyJSON :call <sid>PrettyJSON()
 
 " Source the vimrc file after saving it
 if has("autocmd")
