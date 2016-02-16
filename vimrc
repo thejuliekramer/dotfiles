@@ -38,6 +38,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'elzr/vim-json'
+Plugin 'fatih/vim-go'
 
 "All Plugins must be added before the following line
 call vundle#end()         " required

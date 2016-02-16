@@ -1,0 +1,5 @@
+export GOROOT="$HOME/go_box:$HOME/go1.5"
+export GOBIN="GOROOT/bin:$HOME/go_box/bin:$HOME/go1.5/bin"
+if [[ "$PATH" != "$GOBIN"* ]]; then
+  export PATH="$GOBIN:$PATH"
+fi
